@@ -3,6 +3,7 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import BaseLayout from '../../components/BaseLayout'
 
 const Profile = ({ signOut, user }) => {
+  console.log(user)
   return (
     <BaseLayout>
       <p>this is the profile page</p>
