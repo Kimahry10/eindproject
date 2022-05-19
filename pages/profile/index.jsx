@@ -3,6 +3,7 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 import BaseLayout from '../../components/BaseLayout'
 
 const Profile = ({ signOut, user }) => {
+  const jwtToken = user.signInUserSession.accessToken.jwtToken;
   console.log(user)
   return (
     <BaseLayout>

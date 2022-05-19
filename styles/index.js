@@ -23,3 +23,7 @@ export const borderRadius = {
 export const boxShadow = {
   cards: '0px 3px 20px 0px rgba(0,0,0,0.16)'
 }
+
+export const animationSpeed = '0.3s'
+export const borderColor = '#101820';
+export const shadowColor = '#FEE715';
