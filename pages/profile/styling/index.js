@@ -75,4 +75,10 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
-export { StandardComponentStyling, BannerStyling, ProfileImageStyling, UserInfoAndNavigationStyling, StyledButton }
+const StyledUserComponents = styled.div`
+  width: 100%;
+  max-width: ${screenSize.desktopSize};
+  margin: 3rem auto;
+`;
+
+export { StandardComponentStyling, BannerStyling, ProfileImageStyling, UserInfoAndNavigationStyling, StyledButton, StyledUserComponents }

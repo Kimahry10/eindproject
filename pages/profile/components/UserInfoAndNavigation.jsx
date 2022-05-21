@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { StyledButton, UserInfoAndNavigationStyling } from '../styling'
 import ProfileImage from './ProfileImage'
-import UploadImages from './UploadImages'
-import UserDetails from './UserDetails'
-import UserImages from './UserImages'
 import { useAppContext } from '../../../providers/UserComponents'
 
 const UserInfoAndNavigation = () => {
