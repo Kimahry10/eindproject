@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^2.17.1",
+    "@middy/http-header-normalizer": "^3.0.3",
+    "@middy/http-router": "^3.0.3",
     "aws-amplify": "^4.3.22",
+    "axios": "^0.21.4",
     "emotion": "^11.0.0",
     "next": "12.1.6",
     "primeicons": "^5.0.0",

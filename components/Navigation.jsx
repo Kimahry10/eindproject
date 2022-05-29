@@ -22,6 +22,11 @@ const Navigation = () => {
         </Link>
       </li>
       <li>
+        <Link href="/search">
+          <a>Search</a>
+        </Link>
+      </li>
+      <li>
         <Link href="/about">
           <a>About Us</a>
         </Link>

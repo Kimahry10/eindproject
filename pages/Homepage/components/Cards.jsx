@@ -11,7 +11,7 @@ const Cards = () => {
     <StyledCards>
       <Card icon={profileIcon} title="Create an account" text="Create an account fast and easy. Get started in no time." buttonText='Sign Up' buttonLink='#' />
       <Card icon={uploadIcon} title="Upload your images" text="Upload your images with a single click." buttonText='Upload' buttonLink='#' />
-      <Card icon={checkIcon} title="Enjoy" text="Enjoy the experience and let the money roll in." buttonText='Upload' buttonLink='#' />
+      <Card icon={checkIcon} title="Enjoy" text="Enjoy the experience and let the money roll in." buttonText='Enjoy' buttonLink='#' />
     </StyledCards>
   )
 }
