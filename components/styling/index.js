@@ -153,6 +153,10 @@ const HeaderStyle = styled.header`
     height: 100vh;
     transition: .2s;
     z-index: 999;
+
+    @media (min-width: ${screenSize.desktopSize}) {
+      width: 35%;
+    }
     ul {
       list-style: none;
       width: 100%;
@@ -179,6 +183,20 @@ const HeaderStyle = styled.header`
           text-decoration: none;
         }
       }
+    }
+    button {
+      color: #fff;
+      background: red;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      padding: 1rem;
+      width: 100%;
+      display: inline-block;
+      text-decoration: none;
     }
   }
 `;

@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 import React from 'react'
 // import { withAuthenticator } from '@aws-amplify/ui-react'
+=======
+import React, { useEffect } from 'react'
+import { withAuthenticator } from '@aws-amplify/ui-react'
+>>>>>>> 2191af6c6959e745ca8d2067ede69458faca5544
 import BaseLayout from '../../components/BaseLayout'
 import StandardComponent from './components/StandardComponent';
 import Head from 'next/head';
+import { Auth } from 'aws-amplify';
+
 
 
 const Profile = ({ signOut, user }) => {
+<<<<<<< HEAD
 
 
   // const jwtToken = user.signInUserSession.accessToken.jwtToken;
@@ -17,6 +25,10 @@ const Profile = ({ signOut, user }) => {
   //     (data) => {
   //       console.log(data)
   //     })
+=======
+  const jwtToken = user.signInUserSession.accessToken.jwtToken;
+  console.log(user)
+>>>>>>> 2191af6c6959e745ca8d2067ede69458faca5544
 
 
   return (
@@ -25,7 +37,7 @@ const Profile = ({ signOut, user }) => {
         <title>{`users's profile`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <StandardComponent />
+      <StandardComponent loggedInUser={user} />
 
     </BaseLayout>
   )

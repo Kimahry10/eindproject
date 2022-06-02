@@ -2270,6 +2270,23 @@
     "suggestions-list" "^0.0.2"
     "xtend" "^4.0.1"
 
+"@middy/http-header-normalizer@^3.0.3":
+  "integrity" "sha512-IXyAKQ23StbSkZ4hkSBxEn/xwGn7OI1AgQQIVwTFeZvZ4SNvxqY5G+e60z8v6ByHy3r5L5RzOq3cXJ86CfIoHQ=="
+  "resolved" "https://registry.npmjs.org/@middy/http-header-normalizer/-/http-header-normalizer-3.0.3.tgz"
+  "version" "3.0.3"
+
+"@middy/http-router@^3.0.3":
+  "integrity" "sha512-V+pYhIhsoVObE6+GBh1uSz1qxJqSLvCRDpM7YLoPdzvMtALScaDScN4QfduxtY5fhEpovlOGT3sNdm1xDhyrEw=="
+  "resolved" "https://registry.npmjs.org/@middy/http-router/-/http-router-3.0.3.tgz"
+  "version" "3.0.3"
+  dependencies:
+    "@middy/util" "3.0.3"
+
+"@middy/util@3.0.3":
+  "integrity" "sha512-0HbQspLv9+u6ubPds/fUCpOB3RyeyOlDWPsY3LKxJNz7AUYd+7GwZRA0v6xAveCS3OvA0JxuSs/pGZjcAhtAuw=="
+  "resolved" "https://registry.npmjs.org/@middy/util/-/util-3.0.3.tgz"
+  "version" "3.0.3"
+
 "@next/env@12.1.6":
   "integrity" "sha512-Te/OBDXFSodPU6jlXYPAXpmZr/AkG6DCATAxttQxqOWaq6eDFX25Db3dK0120GZrSZmv4QCe9KsZmJKDbWs4OA=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.6.tgz"
@@ -2905,7 +2922,7 @@
   "resolved" "https://registry.npmjs.org/axe-core/-/axe-core-4.4.2.tgz"
   "version" "4.4.2"
 
-"axios@0.21.4":
+"axios@^0.21.4", "axios@0.21.4":
   "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
   "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
   "version" "0.21.4"
