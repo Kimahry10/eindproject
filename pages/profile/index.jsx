@@ -8,6 +8,7 @@ import { Auth } from 'aws-amplify';
 
 const Profile = ({ signOut, user }) => {
   const jwtToken = user.signInUserSession.accessToken.jwtToken;
+  console.log(user)
 
 
   return (
