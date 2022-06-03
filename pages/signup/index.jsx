@@ -3,45 +3,41 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useFormik } from 'formik';
 import { Auth } from '../../firebase';
 import { AuthenticatedUserContext } from '../../providers/AuthenticatedUser';
+import { useRouter } from 'next/router'
+import { UserAuth } from '../../providers/AuthenticatedUser';
 
 
 const SignUp = (e) => {
+  const router = useRouter()
 
-  const auth = getAuth();
+  const { createUser } = UserAuth();
 
-  const [currentUser, setCurrentUser] = useContext(AuthenticatedUserContext)
-
-  const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirrm, setPasswordConfirrm] = useState('')
+  const [error, setError] = useState('')
 
 
-  const handleSubmit = (e) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        setCurrentUser(userCredential.user)
-        // ...
-      })
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("test")
+    try {
+      await createUser(email, password)
+      router.push('/profile')
+    } catch (e) {
+      setError(e.message)
+      console.log(e.message)
+    }
   }
-
-  console.log(currentUser)
-
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setFirstname(e.target.value)} placeholder='firstname' />
-        <input type="text" onChange={(e) => setLastname(e.target.value)} placeholder='lastname' />
-        <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder='username' />
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+        {/* <input type="text" onChange={(e) => setFirstname(e.target.value)} placeholder='firstname' /> */}
+        {/* <input type="text" onChange={(e) => setLastname(e.target.value)} placeholder='lastname' /> */}
+        {/* <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder='username' /> */}
         <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder='email' />
         <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder='password' />
-        <input type="password" onChange={(e) => setPasswordConfirrm(e.target.value)} placeholder='password' />
+        {/* <input type="password" onChange={(e) => setPasswordConfirrm(e.target.value)} placeholder='password' /> */}
         <button type="submit">submit</button>
       </form>
     </div>

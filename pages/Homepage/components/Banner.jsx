@@ -9,7 +9,7 @@ const Banner = () => {
       <H1>Photoland</H1>
       <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, iste illo. At dolor magni sunt harum? Eligendi temporibus fuga vitae.</P>
       <div className='banner__btn-wrap'>
-        <LinkButtonNoBorder linkName='Get started' linkUrl='/profile' />
+        <LinkButtonNoBorder linkName='Get started' linkUrl='/signin' />
         {/* <LinkButtonWithBorder linkName='Sign Up' linkUrl='/profile' /> */}
       </div>
     </BannerStyling>

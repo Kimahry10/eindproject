@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["image-bucket-eindproject.s3.eu-west-3.amazonaws.com"],
+    domains: ["firebasestorage.googleapis.com", "image-bucket-eindproject.s3.eu-west-3.amazonaws.com"],
   },
 }
 

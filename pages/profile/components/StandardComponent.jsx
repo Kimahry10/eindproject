@@ -6,11 +6,11 @@ import UserInfoAndNavigation from './UserInfoAndNavigation'
 import UserComponents from './UserComponents'
 
 
-const StandardComponent = ({ loggedInUser }) => {
+const StandardComponent = () => {
   return (
     <StandardComponentStyling>
       <Banner />
-      <UserInfoAndNavigation loggedInUser={loggedInUser} />
+      <UserInfoAndNavigation />
       <UserComponents />
     </StandardComponentStyling>
   )
