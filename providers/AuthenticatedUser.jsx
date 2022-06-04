@@ -3,7 +3,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  updateProfile
 } from 'firebase/auth';
 import { auth } from '../firebase';
 
@@ -12,8 +13,16 @@ const AuthenticatedUserContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({})
 
-  const createUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password)
+  const createUser = (email, password, username) => {
+    return createUserWithEmailAndPassword(auth, email, password).then((result) => {
+      return updateProfile(result.user, {
+        displayName: username,
+        photoURL: "https://herrmans.eu/wp-content/uploads/2019/01/765-default-avatar.png"
+      }).catch((error) => {
+        // An error occurred
+        console.error(error)
+      });
+    });
   }
 
   const login = (email, password) => {
@@ -25,7 +34,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser)
       setUser(currentUser)
     })
     return () => {

@@ -67,6 +67,7 @@ const ProfileImageStyling = styled.div`
   height: 95px;
   border-radius: 50%;
   margin: 1rem;
+  position: relative;
 `;
 
 const StyledButton = styled.button`
@@ -81,4 +82,34 @@ const StyledUserComponents = styled.div`
   margin: 3rem auto;
 `;
 
-export { StandardComponentStyling, BannerStyling, ProfileImageStyling, UserInfoAndNavigationStyling, StyledButton, StyledUserComponents }
+const ImageGridStyling = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 1rem;
+
+  a {
+    margin-bottom: 1rem;
+    @media (min-width: ${screenSize.desktopSize}) {
+      margin-bottom: 3rem;
+    }
+  }
+  @media (min-width: ${screenSize.desktopSize}) {
+    padding: 0;
+  }
+
+`;
+
+const UploadImagesStyling = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .p-knob {
+    margin-bottom: 1rem;
+  }
+  .p-inputtext {
+    margin-bottom: 1rem;
+  }
+`;
+
+export { StandardComponentStyling, BannerStyling, ProfileImageStyling, UserInfoAndNavigationStyling, StyledButton, StyledUserComponents, ImageGridStyling, UploadImagesStyling }

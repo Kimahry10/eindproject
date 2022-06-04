@@ -25,7 +25,6 @@ const Search = () => {
     })
   }, [])
 
-  allImages.map(image => console.log(image.image))
 
   return (
     <BaseLayout>
@@ -36,9 +35,7 @@ const Search = () => {
       <div className='images'>
         {
           allImages.map(image => {
-            // <Image key={image.id} src={image.image} alt='image' height={300} width={300} />
             return <div key={image.id}>
-              <p>{image.image}</p>
               {
                 image.image && <Image key={image.id} src={image.image} alt='image' height={300} width={300} />
               }
