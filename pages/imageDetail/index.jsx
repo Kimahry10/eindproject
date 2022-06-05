@@ -39,7 +39,7 @@ const ImageDetail = () => {
     <BaseLayout>
       <ImageDetailStyling>
         <ImageSize>
-          <Image src={image} alt='image' layout='fill' objectFit='contain' />
+          {image && <Image src={image} alt='image' layout='fill' objectFit='contain' />}
         </ImageSize>
         <ImageDetailsText>
           <h1>title of the photo.jpg</h1>
@@ -52,7 +52,7 @@ const ImageDetail = () => {
             <li>tags</li>
             <li>tags</li>
           </ul>
-          <LinkButtonNoBorder linkUrl={'/'} linkName='Buy' />
+          <LinkButtonNoBorder linkUrl={`/preview?image=${image}`} linkName='Buy' />
         </ImageDetailsText>
       </ImageDetailStyling>
     </BaseLayout>

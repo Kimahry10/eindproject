@@ -31,11 +31,9 @@ const UserImages = () => {
       {
         allImages.map(image => {
           if (user.uid === image.userId) {
-            return <Link href={`imageDetail?image=${image.image}`}>
-              <a>
-                <Image src={image.image} alt='image' width={300} height={300} />
-              </a>
-            </Link>
+            return <div>
+              <Image src={image.image} alt='image' layout='fill' objectFit='cover' />
+            </div>
           }
         })
       }

@@ -10,7 +10,7 @@ const UserComponents = () => {
   return (
     <StyledUserComponents>
       {userComponent === 'myDetails' && <UserDetails />}
-      {userComponent === 'profile' && <UserImages />}
+      {userComponent === 'myImages' && <UserImages />}
       {userComponent === 'uploadImages' && <UploadImages />}
     </StyledUserComponents>
   )

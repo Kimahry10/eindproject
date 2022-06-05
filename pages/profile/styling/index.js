@@ -83,21 +83,22 @@ const StyledUserComponents = styled.div`
 `;
 
 const ImageGridStyling = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 1rem 0;
 
-  a {
-    margin-bottom: 1rem;
-    @media (min-width: ${screenSize.desktopSize}) {
-      margin-bottom: 3rem;
-    }
+  @media (min-width: ${screenSize.tabletSize}) {
+    gap: 1rem;
   }
   @media (min-width: ${screenSize.desktopSize}) {
     padding: 0;
   }
 
+  div {
+    height: 300px;
+    position: relative;
+  }
 `;
 
 const UploadImagesStyling = styled.div`

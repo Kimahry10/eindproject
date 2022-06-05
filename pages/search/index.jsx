@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-import { H1, H2 } from './styles';
+import { H1, H2, ImageGridStyling, SearchStyling } from './styles';
 import BaseLayout from '../../components/BaseLayout'
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebase';
@@ -13,7 +13,7 @@ const Search = () => {
 
   const [allImages, setAllImages] = useState([])
 
-  const colRef = collection(firestore, 'users')
+  const colRef = collection(firestore, 'images')
 
   useEffect(() => {
     getDocs(colRef).then((snapshot) => {
@@ -28,21 +28,23 @@ const Search = () => {
 
   return (
     <BaseLayout>
-      <H1>Search</H1>
-      <H2>Profiles</H2>
+      <SearchStyling>
+        <H1>Search</H1>
+        <H2>Profiles</H2>
 
-      <h2>images</h2>
-      <div className='images'>
-        {
-          allImages.map(image => {
-            return <div key={image.id}>
-              {
-                image.image && <Image key={image.id} src={image.image} alt='image' height={300} width={300} />
-              }
-            </div>
-          })
-        }
-      </div>
+        <h2>images</h2>
+        <ImageGridStyling>
+          {
+            allImages.map((image, index) => {
+              return <Link key={index} href={`preview?image=${image.image}`}>
+                <a>
+                  <Image src={image.image} alt='image' layout='fill' objectFit='cover' priority />
+                </a>
+              </Link>
+            })
+          }
+        </ImageGridStyling>
+      </SearchStyling>
     </BaseLayout >
   )
 }

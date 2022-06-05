@@ -15,7 +15,7 @@ const UserInfoAndNavigation = () => {
     <UserInfoAndNavigationStyling>
       <div className='button-wrap'>
         <StyledButton onClick={() => setUserComponent('myDetails')}>My Details</StyledButton>
-        <StyledButton onClick={() => setUserComponent('profile')}>Profile</StyledButton>
+        <StyledButton onClick={() => setUserComponent('myImages')}>My Images</StyledButton>
         <StyledButton onClick={() => setUserComponent('uploadImages')}>Upload Images</StyledButton>
       </div>
       <div className='profileImageUserInfoWrap'>
