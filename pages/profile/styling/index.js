@@ -37,6 +37,10 @@ const UserInfoAndNavigationStyling = styled.div`
     @media (min-width: ${screenSize.desktopSize}) {
       flex-direction: column;
       align-items: flex-start;
+
+      button:last-child {
+        margin-top: 1rem;
+      }
     }
   }
   .profileImageUserInfoWrap {
@@ -72,6 +76,7 @@ const ProfileImageStyling = styled.div`
 
 const StyledButton = styled.button`
   background: #fff;
+  margin-bottom: 0.5rem;
   border: none;
   cursor: pointer;
 `;

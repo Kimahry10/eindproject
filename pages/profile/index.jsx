@@ -15,7 +15,7 @@ const Profile = () => {
     return (
       <BaseLayout>
         <Head>
-          <title>{`users's profile`}</title>
+          <title>{user.displayName}</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <StandardComponent />

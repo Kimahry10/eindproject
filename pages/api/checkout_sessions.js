@@ -19,7 +19,7 @@ export default async function handler(req, res) {
             quantity: 1,
           }],
         mode: 'payment',
-        success_url: `${req.headers.origin}/success`,
+        success_url: `${req.headers.origin}/success?payment=true`,
         cancel_url: `${req.headers.origin}/?canceled=true`,
       });
       res.redirect(303, session.url);

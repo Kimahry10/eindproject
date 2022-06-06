@@ -17,11 +17,12 @@ const UserInfoAndNavigation = () => {
         <StyledButton onClick={() => setUserComponent('myDetails')}>My Details</StyledButton>
         <StyledButton onClick={() => setUserComponent('myImages')}>My Images</StyledButton>
         <StyledButton onClick={() => setUserComponent('uploadImages')}>Upload Images</StyledButton>
+        <StyledButton onClick={() => setUserComponent('purchasedImages')}>Purchased Images</StyledButton>
       </div>
       <div className='profileImageUserInfoWrap'>
         <ProfileImage />
         <div>
-          <h4>{user && user.email}</h4>
+          <h4>{user && user.displayName}</h4>
           <p>Update your profile picture and personal details.</p>
         </div>
       </div>

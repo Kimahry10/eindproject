@@ -6,6 +6,8 @@ import { FormStyling, ImageDetailsText, ImageSize } from './styles';
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebase';
 import BaseLayout from '../../components/BaseLayout';
+import { UserAuth } from '../../providers/AuthenticatedUser';
+
 
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -17,11 +19,15 @@ const PreviewPage = () => {
   const { success, canceled } = router.query;
   const { image } = router.query
 
+  const { user } = UserAuth();
+
+
   const [allImages, setAllImages] = useState([])
 
-  const colRef = collection(firestore, 'images')
 
   useEffect(() => {
+    const colRef = collection(firestore, 'images')
+
     if (success !== undefined || canceled !== undefined) {
       if (success) {
         console.log('Order placed! You will receive an email confirmation.');
@@ -50,8 +56,11 @@ const PreviewPage = () => {
       description = imageDetail.description
       tags = imageDetail.tags
       imageTitle = imageDetail.image
+      localStorage.setItem('imageInfo', JSON.stringify({ image: imageTitle, uid: user.uid }));
     }
   })
+
+
 
   return (
     <BaseLayout>

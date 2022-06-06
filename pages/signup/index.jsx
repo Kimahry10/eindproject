@@ -6,6 +6,8 @@ import { AuthenticatedUserContext } from '../../providers/AuthenticatedUser';
 import { useRouter } from 'next/router'
 import { UserAuth } from '../../providers/AuthenticatedUser';
 
+// upload image as avatar at signup
+// delete authenticated users, signed up users get default image
 
 const SignUp = (e) => {
   const router = useRouter()
@@ -15,7 +17,6 @@ const SignUp = (e) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
-  const [passwordConfirrm, setPasswordConfirrm] = useState('')
   const [error, setError] = useState('')
 
 
@@ -34,13 +35,11 @@ const SignUp = (e) => {
   return (
     <div>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-        {/* <input type="text" onChange={(e) => setFirstname(e.target.value)} placeholder='firstname' /> */}
-        {/* <input type="text" onChange={(e) => setLastname(e.target.value)} placeholder='lastname' /> */}
-        <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder='username' />
-        <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder='email' />
-        <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder='password' />
-        {/* <input type="password" onChange={(e) => setPasswordConfirrm(e.target.value)} placeholder='password' /> */}
+        <input required type="text" onChange={(e) => setUsername(e.target.value)} placeholder='username' />
+        <input required type="email" onChange={(e) => setEmail(e.target.value)} placeholder='email' />
+        <input required type="password" onChange={(e) => setPassword(e.target.value)} placeholder='password' />
         <button type="submit">submit</button>
+        <p>{error}</p>
       </form>
     </div>
   )

@@ -1,12 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import successIcon from '/public/icons/check.svg';
 import Image from 'next/image';
 import BaseLayout from '../../components/BaseLayout';
 import Link from 'next/link';
 import { SuccessStyling } from './styling';
 import LinkButtonNoBorder from '../../components/buttons/LinkButtonNoBorder';
+import { useRouter } from 'next/router'
+import { addDoc, collection, doc, getDoc, setDoc } from 'firebase/firestore';
+import { db, firestore } from '../../firebase';
+import { UserAuth } from '../../providers/AuthenticatedUser';
+import { FirebaseError } from 'firebase/app';
 
 const Success = () => {
+  const { query } = useRouter();
+  const { user } = UserAuth();
+
+  try {
+    const queryPaymentStatus = JSON.parse(query.payment);
+    const image = JSON.parse(localStorage.getItem('imageInfo')).image
+    console.log(image)
+
+    if (queryPaymentStatus) {
+      addDoc(collection(firestore, "userPaidImages"), {
+        uid: user.uid,
+        image: image
+      });
+    }
+  } catch (err) {
+    console.log(err)
+  }
+
+
   return (
     <BaseLayout>
       <SuccessStyling>

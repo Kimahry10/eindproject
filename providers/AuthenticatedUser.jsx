@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password).then((result) => {
       return updateProfile(result.user, {
         displayName: username,
-        photoURL: "https://herrmans.eu/wp-content/uploads/2019/01/765-default-avatar.png"
+        photoURL: "https://herrmans.eu/wp-content/uploads/2019/01/765-default-avatar.png",
       }).catch((error) => {
         // An error occurred
         console.error(error)

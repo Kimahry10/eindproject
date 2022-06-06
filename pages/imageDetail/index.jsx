@@ -14,9 +14,9 @@ const ImageDetail = () => {
 
   const [allImages, setAllImages] = useState([])
 
-  const colRef = collection(firestore, 'images')
 
   useEffect(() => {
+    const colRef = collection(firestore, 'images')
     getDocs(colRef).then((snapshot) => {
       let images = [];
       snapshot.docs.forEach(doc => {

@@ -31,6 +31,7 @@ const SignIn = () => {
         <input type="password" placeholder='password' onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">sign in</button>
       </form>
+      <p>{error}</p>
       <p>don&apos;t have an account? <Link href={'/signup'}><a>sign up</a></Link></p>
     </div>
   )

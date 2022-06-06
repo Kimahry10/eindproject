@@ -7,15 +7,15 @@ import { firestore } from '../../firebase';
 import Image from 'next/image';
 
 
-
+// need to add input and filter results for users and images
 
 const Search = () => {
 
   const [allImages, setAllImages] = useState([])
 
-  const colRef = collection(firestore, 'images')
 
   useEffect(() => {
+    const colRef = collection(firestore, 'images')
     getDocs(colRef).then((snapshot) => {
       let images = [];
       snapshot.docs.forEach(doc => {
@@ -24,15 +24,16 @@ const Search = () => {
       setAllImages(images)
     })
   }, [])
-
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault()
+  });
 
   return (
     <BaseLayout>
       <SearchStyling>
         <H1>Search</H1>
         <H2>Profiles</H2>
-
-        <h2>images</h2>
+        <H2>images</H2>
         <ImageGridStyling>
           {
             allImages.map((image, index) => {
