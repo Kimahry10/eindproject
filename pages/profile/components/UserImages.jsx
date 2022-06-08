@@ -32,7 +32,7 @@ const UserImages = () => {
         allImages.map(image => {
           if (user.uid === image.userId) {
             return <div>
-              <Image src={image.image} alt='image' layout='fill' objectFit='cover' />
+              <Image src={image.image} alt='image' layout='fill' objectFit='cover' priority />
             </div>
           }
         })

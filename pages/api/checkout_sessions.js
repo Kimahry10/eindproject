@@ -1,3 +1,7 @@
+// const functions = require('firebase-functions');
+// const admin = require('firebase-admin');
+// admin.initializeApp();
+
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
@@ -31,3 +35,30 @@ export default async function handler(req, res) {
     res.status(405).end('Method Not Allowed');
   }
 }
+
+// exports.stripeWebhook = functions.https.onRequest(async (req, res) => {
+//   const stripe = require("stripe")(functions.config().stripe.token);
+//   let event;
+
+//   try {
+//     const whSec = functions.config().stripe.payments_webhook_secret;
+
+//     event = stripe.webhooks.constructEvent(
+//       req.rawBody,
+//       req.headers["stripe-signature"],
+//       whSec,
+//     );
+//   } catch (err) {
+//     console.error("⚠️ Webhook signature verification failed.");
+//     return res.sendStatus(400);
+//   }
+
+//   const dataObject = event.data.object;
+
+//   await admin.firestore().collection("orders").doc().set({
+//     checkoutSessionId: dataObject.id,
+//     paymentStatus: dataObject.payment_status,
+//     shippingInfo: dataObject.shipping,
+//     amountTotal: dataObject.amount_total,
+//   });
+// })

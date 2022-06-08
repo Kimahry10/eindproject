@@ -47,12 +47,13 @@ const PreviewPage = () => {
 
 
   let description = '';
-  let tags = '';
+  let tags = [];
   let imageTitle = '';
 
   allImages.map(imageDetail => {
     const imageSplit = imageDetail.image.split('&token')[0]
     if (imageSplit == image) {
+      console.log(imageDetail.tags)
       description = imageDetail.description
       tags = imageDetail.tags
       imageTitle = imageDetail.image
@@ -60,7 +61,7 @@ const PreviewPage = () => {
     }
   })
 
-
+  // console.log(tags.map(tag => ))
 
   return (
     <BaseLayout>
@@ -75,7 +76,7 @@ const PreviewPage = () => {
             <h2>Tags</h2>
             <ul>
               {
-                tags && tags.map((tag, index) => <li key={index}>{tag}</li>)
+                tags && tags.map((tag, index) => <li key={index}>{tag.name}</li>)
               }
             </ul>
           </div>

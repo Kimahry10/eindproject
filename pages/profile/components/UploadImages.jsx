@@ -7,23 +7,26 @@ import "primeicons/primeicons.css";
 import { Knob } from 'primereact/knob';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { InputText } from 'primereact/inputtext';
+import { AutoComplete } from 'primereact/autocomplete';
 
 import { storage } from '../../../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { firestore } from '../../../firebase';
 import { UserAuth } from '../../../providers/AuthenticatedUser';
+import { Tags } from '../../../providers/Tags';
 import { collection, addDoc } from 'firebase/firestore';
 import { color } from '../../../styles';
 
 import { UploadImagesStyling } from '../styling'
+import { MultipleValuesInput } from './MultipleValuesInput'
 
 
 const UploadImages = () => {
 
   const { user } = UserAuth();
+  const { selectedTags, setSelectedTags } = Tags();
 
   const [knobValue, setKnobValue] = useState(0)
-  const [tags, setTags] = useState('')
   const [description, setDescription] = useState('')
 
 
@@ -50,11 +53,11 @@ const UploadImages = () => {
             userId: uid,
             image: url,
             description: description,
-            tags: [tags]
+            tags: selectedTags
           })
         }).then(() => {
           setDescription('');
-          setTags('')
+          setSelectedTags('')
         })
       }
     )
@@ -65,7 +68,7 @@ const UploadImages = () => {
   return (
     <UploadImagesStyling>
       <Knob value={knobValue} min={0} max={100} onChange={(e) => setKnobValue(knobValue)} valueColor={color.green} rangeColor={color.black} />
-      <InputText value={tags} onChange={(e) => setTags(e.target.value)} placeholder='tags' />
+      <MultipleValuesInput />
       <InputTextarea placeholder='description' rows={5} cols={30} value={description} onChange={(e) => setDescription(e.target.value)} autoResize />
       <FileUpload customUpload uploadHandler={handleSubmit} name="demo[]" url="./upload" multiple maxFileSize="10000000" accept="image/*" />
     </UploadImagesStyling>

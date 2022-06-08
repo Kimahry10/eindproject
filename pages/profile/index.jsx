@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import BaseLayout from '../../components/BaseLayout'
 import StandardComponent from './components/StandardComponent';
 import Head from 'next/head';
@@ -15,7 +15,7 @@ const Profile = () => {
     return (
       <BaseLayout>
         <Head>
-          <title>{user.displayName}</title>
+          <title>{user.displayName}&apos;s profile</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         <StandardComponent />
