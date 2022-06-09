@@ -9,9 +9,6 @@ import BaseLayout from '../../components/BaseLayout';
 import { UserAuth } from '../../providers/AuthenticatedUser';
 
 
-
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
 loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 const PreviewPage = () => {
@@ -60,8 +57,6 @@ const PreviewPage = () => {
       localStorage.setItem('imageInfo', JSON.stringify({ image: imageTitle, uid: user.uid }));
     }
   })
-
-  // console.log(tags.map(tag => ))
 
   return (
     <BaseLayout>

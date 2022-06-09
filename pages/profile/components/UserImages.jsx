@@ -1,41 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import { UserAuth } from '../../../providers/AuthenticatedUser';
-import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '../../../firebase';
+import { collection, getDocs, query, where, } from "firebase/firestore";
 import Image from 'next/image';
-import Link from 'next/link';
+
+import { firestore } from '../../../firebase';
+// import Image from 'next/image';
 import { ImageGridStyling } from '../styling';
-import { screenSize } from '../../../styles';
 
 const UserImages = () => {
 
   const { user } = UserAuth();
-  console.log(user.uid)
-
   const [allImages, setAllImages] = useState([])
 
 
   useEffect(() => {
-    const colRef = collection(firestore, 'images')
-    getDocs(colRef).then((snapshot) => {
+    const q = query(collection(firestore, "images"), where("userId", "==", user.uid));
+
+    getDocs(q).then((querySnapshot) => {
       let images = [];
-      snapshot.docs.forEach(doc => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        // console.log(doc.id, " => ", doc.data());
         images.push({ ...doc.data(), id: doc.id })
-      })
-      setAllImages(images)
+        setAllImages(images);
+      });
     })
   }, [])
 
   return (
     <ImageGridStyling>
       {
-        allImages.map(image => {
+        allImages && allImages.map(image => {
           if (user.uid === image.userId) {
             return <div>
               <Image src={image.image} alt='image' layout='fill' objectFit='cover' priority />
             </div>
           }
         })
+
       }
     </ImageGridStyling>
   )

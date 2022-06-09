@@ -6,18 +6,29 @@ import {
   onAuthStateChanged,
   updateProfile
 } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth, firestore } from '../firebase';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 
 const AuthenticatedUserContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({})
 
-  const createUser = (email, password, username) => {
+  const createUser = (email, password, username, bio, website) => {
     return createUserWithEmailAndPassword(auth, email, password).then((result) => {
       return updateProfile(result.user, {
+        // sets displayname and photourl at signup
         displayName: username,
         photoURL: "https://herrmans.eu/wp-content/uploads/2019/01/765-default-avatar.png",
+      }).then(() => {
+        // adds all extra info from authenticated user
+        setDoc(doc(firestore, "users", result.user.uid), {
+          displayName: username,
+          photoURL: "https://herrmans.eu/wp-content/uploads/2019/01/765-default-avatar.png",
+          email: email,
+          website: website,
+          bio: bio
+        });
       }).catch((error) => {
         // An error occurred
         console.error(error)

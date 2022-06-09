@@ -14,7 +14,6 @@ export const MultipleValuesInput = () => {
   useEffect(() => {
     setTags(json.data);
   }, []);
-  console.log(tags)
 
   const searchCountry = (event) => {
     setTimeout(() => {

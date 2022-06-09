@@ -18,7 +18,8 @@ const Success = () => {
   try {
     const queryPaymentStatus = JSON.parse(query.payment);
     const image = JSON.parse(localStorage.getItem('imageInfo')).image
-    console.log(image)
+
+    console.log(queryPaymentStatus)
 
     if (queryPaymentStatus) {
       addDoc(collection(firestore, "userPaidImages"), {
@@ -29,6 +30,7 @@ const Success = () => {
   } catch (err) {
     console.log(err)
   }
+
 
 
   return (

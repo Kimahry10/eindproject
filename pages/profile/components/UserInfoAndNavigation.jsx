@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { StyledButton, UserInfoAndNavigationStyling } from '../styling'
 import ProfileImage from './ProfileImage'
 import { useAppContext } from '../../../providers/UserComponents'
-import { Auth } from 'aws-amplify'
 import { UserAuth } from '../../../providers/AuthenticatedUser'
 
 const UserInfoAndNavigation = () => {
   const [active, setActive] = useState('myDetails')
   const { userComponent, setUserComponent } = useAppContext();
   const { user, logout } = UserAuth();
-  console.log(user)
 
   return (
     <UserInfoAndNavigationStyling>

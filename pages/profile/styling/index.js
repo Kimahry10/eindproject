@@ -16,6 +16,9 @@ const BannerStyling = styled.div`
   @media (min-width: ${screenSize.tabletSize}) {
     height: 200px;
   }
+  @media (min-width: ${screenSize.desktopSize}) {
+    height: 300px;
+  }
 `;
 
 const UserInfoAndNavigationStyling = styled.div`
@@ -66,7 +69,6 @@ const UserInfoAndNavigationStyling = styled.div`
 `;
 
 const ProfileImageStyling = styled.div`
-  background: ${color.black};
   width: 95px;
   height: 95px;
   border-radius: 50%;

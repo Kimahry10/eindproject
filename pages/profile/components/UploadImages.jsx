@@ -14,7 +14,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { firestore } from '../../../firebase';
 import { UserAuth } from '../../../providers/AuthenticatedUser';
 import { Tags } from '../../../providers/Tags';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, setDoc, doc } from 'firebase/firestore';
 import { color } from '../../../styles';
 
 import { UploadImagesStyling } from '../styling'
