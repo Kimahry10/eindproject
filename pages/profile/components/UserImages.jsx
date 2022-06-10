@@ -19,8 +19,6 @@ const UserImages = () => {
     getDocs(q).then((querySnapshot) => {
       let images = [];
       querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        // console.log(doc.id, " => ", doc.data());
         images.push({ ...doc.data(), id: doc.id })
         setAllImages(images);
       });
@@ -30,10 +28,10 @@ const UserImages = () => {
   return (
     <ImageGridStyling>
       {
-        allImages && allImages.map(image => {
+        allImages && allImages.map((image, index) => {
           if (user.uid === image.userId) {
             return <div>
-              <Image src={image.image} alt='image' layout='fill' objectFit='cover' priority />
+              <Image src={image.image} key={index} alt='image' layout='fill' objectFit='fill' priority />
             </div>
           }
         })

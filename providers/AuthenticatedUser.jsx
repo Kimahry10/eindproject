@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {
       }).then(() => {
         // adds all extra info from authenticated user
         setDoc(doc(firestore, "users", result.user.uid), {
+          uid: result.user.uid,
           displayName: username,
           photoURL: "https://herrmans.eu/wp-content/uploads/2019/01/765-default-avatar.png",
           email: email,

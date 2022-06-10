@@ -22,6 +22,21 @@
         },
         {
             "name": "bridge"
+        },
+        {
+            "name": "sea"
+        },
+        {
+            "name": "water"
+        },
+        {
+            "name": "stone"
+        },
+        {
+            "name": "woman"
+        },
+        {
+            "name": "man"
         }
 
     ]

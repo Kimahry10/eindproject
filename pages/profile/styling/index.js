@@ -92,7 +92,7 @@ const StyledUserComponents = styled.div`
 const ImageGridStyling = styled.div`
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fit, 320px);
   gap: 1rem 0;
 
   @media (min-width: ${screenSize.tabletSize}) {

@@ -6,8 +6,6 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Knob } from 'primereact/knob';
 import { InputTextarea } from 'primereact/inputtextarea';
-import { InputText } from 'primereact/inputtext';
-import { AutoComplete } from 'primereact/autocomplete';
 
 import { storage } from '../../../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';

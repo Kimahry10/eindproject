@@ -1,8 +1,9 @@
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { firestore } from '../../../firebase';
 import { UserAuth } from '../../../providers/AuthenticatedUser';
 import Image from 'next/image';
+import { ImageGridStyling } from '../styling';
 
 const PurchasedImages = () => {
 
@@ -10,28 +11,29 @@ const PurchasedImages = () => {
 
   const [allImages, setAllImages] = useState([])
 
-
   useEffect(() => {
-    const colRef = collection(firestore, 'userPaidImages')
-    getDocs(colRef).then((snapshot) => {
+    const q = query(collection(firestore, "userPaidImages"), where("uid", "==", user.uid));
+    getDocs(q).then((querySnapshot) => {
       let images = [];
-      snapshot.docs.forEach(doc => {
+      querySnapshot.forEach((doc) => {
         images.push({ ...doc.data(), id: doc.id })
-      })
-      setAllImages(images)
+        setAllImages(images);
+      });
     })
   }, [])
 
   return (
-    <div>
+    <ImageGridStyling>
       {
-        allImages.map(image => {
+        allImages.map((image, index) => {
           if (image.uid === user.uid) {
-            return <Image src={image.image} alt={image} width={300} height={300} priority />
+            return <div>
+              <Image src={image.image} key={index} alt='image' layout='fill' objectFit='fill' priority />
+            </div>
           }
         })
       }
-    </div>
+    </ImageGridStyling>
   )
 }
 

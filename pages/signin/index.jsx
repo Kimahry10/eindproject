@@ -2,6 +2,13 @@ import React, { useContext, useState } from 'react'
 import router from 'next/router';
 import { UserAuth } from '../../providers/AuthenticatedUser';
 import Link from 'next/link';
+import { Form, SignInStyling } from './styles';
+
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 const SignIn = () => {
 
@@ -25,15 +32,31 @@ const SignIn = () => {
 
 
   return (
-    <div>
-      <form onSubmit={handleSignIn}>
-        <input type="email" placeholder='email' onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder='password' onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">sign in</button>
-      </form>
-      <p>{error}</p>
-      <p>don&apos;t have an account? <Link href={'/signup'}><a>sign up</a></Link></p>
-    </div>
+    <SignInStyling>
+      <Form onSubmit={handleSignIn}>
+        <div className='back-to-homepage'>
+          <i className="pi pi-arrow-left" style={{ 'fontSize': '1em' }}></i>
+          <Link href={'/'}>
+            <a>
+              Back to homepage
+            </a>
+          </Link>
+        </div>
+        <span className="p-float-label">
+          <InputText id="in" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <label htmlFor="in">Email</label>
+        </span>
+        <span className="p-float-label">
+          <InputText id="in" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <label htmlFor="in">Password</label>
+        </span>
+        <Button label="Sign in" />
+      </Form>
+      <div className='formText'>
+        <p>{error}</p>
+        <p>Don&apos;t have an account? <Link href={'/signup'}><a>sign up</a></Link></p>
+      </div>
+    </SignInStyling>
   )
 }
 
