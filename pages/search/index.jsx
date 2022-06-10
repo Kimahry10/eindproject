@@ -18,7 +18,7 @@ const Search = () => {
 
   const [allImages, setAllImages] = useState([])
   const [allUsers, setAllUsers] = useState([])
-  const [allTags, setAllTags] = useState()
+  const [tag, setTag] = useState()
   const [searchValue, setSearchValue] = useState('')
 
 
@@ -55,12 +55,10 @@ const Search = () => {
 
   const test = filteredTags.map(tag => {
     tag.forEach(t => {
-      console.log(t.name)
       return t.name
     })
   })
 
-  console.log(test)
 
   return (
     <BaseLayout>
@@ -98,13 +96,18 @@ const Search = () => {
                 return val
               } else {
                 val.tags.map(tag => {
-                  // console.log(tag.name)
                   if (tag.name.toLowerCase().includes(searchValue.toLowerCase())) {
-                    console.log(val)
-                    return <Image src={val.image} alt='image' layout='fill' objectFit='cover' priority />
-                    // return val.image
+                    return val
                   }
                 })
+
+                // const tag = val.tags.map(tag => {
+                //   if (tag.name.toLowerCase().includes(searchValue.toLowerCase())) {
+                //     console.log(tag.name)
+                //     return tag.name
+                //   }
+                // })
+                // return tag
               }
             }).map((image, index) => {
               return <Link key={index} href={`preview?image=${image.image}`}>
