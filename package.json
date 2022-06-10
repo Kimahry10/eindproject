@@ -17,6 +17,7 @@
         "@stripe/stripe-js": "^1.31.0",
         "aws-amplify": "^4.3.22",
         "axios": "^0.21.4",
+        "dotenv": "^16.0.1",
         "emotion": "^11.0.0",
         "firebase": "^9.8.2",
         "formik": "^2.2.9",
