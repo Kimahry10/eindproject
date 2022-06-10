@@ -19,8 +19,6 @@ const Success = () => {
     const queryPaymentStatus = JSON.parse(query.payment);
     const image = JSON.parse(localStorage.getItem('imageInfo')).image
 
-    console.log(queryPaymentStatus)
-
     if (queryPaymentStatus) {
       addDoc(collection(firestore, "userPaidImages"), {
         uid: user.uid,

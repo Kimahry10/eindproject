@@ -5,10 +5,6 @@ import { firestore } from '../../../firebase';
 import Link from 'next/link';
 
 
-
-
-
-
 const UserDetails = () => {
   const { user } = UserAuth();
 
@@ -18,16 +14,12 @@ const UserDetails = () => {
   useEffect(() => {
     getDoc(doc(firestore, "users", `${user.uid}`)).then(docSnap => {
       if (docSnap.exists()) {
-        // console.log("Document data:", docSnap.data());
         setData(docSnap.data())
       } else {
         console.log("No such document!");
       }
     })
   }, [user])
-
-
-  console.log(data)
 
   return (
     <div>

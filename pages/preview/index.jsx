@@ -23,8 +23,6 @@ const PreviewPage = () => {
 
 
   useEffect(() => {
-    const colRef = collection(firestore, 'images')
-
     if (success !== undefined || canceled !== undefined) {
       if (success) {
         console.log('Order placed! You will receive an email confirmation.');
@@ -33,6 +31,7 @@ const PreviewPage = () => {
         console.log('Order canceled -- continue to shop around and checkout when you’re ready.');
       }
     }
+    const colRef = collection(firestore, 'images')
     getDocs(colRef).then((snapshot) => {
       let images = [];
       snapshot.docs.forEach(doc => {
@@ -50,7 +49,6 @@ const PreviewPage = () => {
   allImages.map(imageDetail => {
     const imageSplit = imageDetail.image.split('&token')[0]
     if (imageSplit == image) {
-      console.log(imageDetail.tags)
       description = imageDetail.description
       tags = imageDetail.tags
       imageTitle = imageDetail.image

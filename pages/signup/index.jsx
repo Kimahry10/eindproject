@@ -39,24 +39,6 @@ const SignUp = (e) => {
   }
 
   return (
-    // <div>
-    //   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-    //     {/* <input type="file" name="photoUrl" id="photoUrl" onChange={(e) => setPhotoUrl(e.target.files[0].name)} /> */}
-    //     username:
-    //     <input required type="text" onChange={(e) => setUsername(e.target.value)} />
-    //     email:
-    //     <input required type="email" onChange={(e) => setEmail(e.target.value)} />
-    //     bio:
-    //     <textarea cols="30" rows="10" onChange={(e) => setBio(e.target.value)}></textarea>
-    //     website:
-    //     <input type="text" onChange={(e) => setWebsite(e.target.value)} />
-    //     password:
-    //     <input required type="password" onChange={(e) => setPassword(e.target.value)} />
-    //     <button type="submit">submit</button>
-    //     <p>{error}</p>
-    //   </form>
-    // </div>
-
     <SignInStyling>
       <Form onSubmit={handleSubmit}>
         <div className='back-to-homepage'>

@@ -58,7 +58,7 @@ const ImageGridStyling = styled.div`
   margin: 0 auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fit, 300px);
   gap: 1rem 0;
 
   @media (min-width: ${screenSize.tabletSize}) {
