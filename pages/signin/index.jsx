@@ -47,7 +47,7 @@ const SignIn = () => {
           <label htmlFor="in">Email</label>
         </span>
         <span className="p-float-label">
-          <InputText id="in" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <InputText id="in" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
           <label htmlFor="in">Password</label>
         </span>
         <Button label="Sign in" />
