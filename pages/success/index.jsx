@@ -12,22 +12,22 @@ import { UserAuth } from '../../providers/AuthenticatedUser';
 import { FirebaseError } from 'firebase/app';
 
 const Success = () => {
-  const { query } = useRouter();
-  const { user } = UserAuth();
+  // const { query } = useRouter();
+  // const { user } = UserAuth();
 
-  try {
-    const queryPaymentStatus = JSON.parse(query.payment);
-    const image = JSON.parse(localStorage.getItem('imageInfo')).image
+  // try {
+  //   const queryPaymentStatus = JSON.parse(query.payment);
+  //   const image = JSON.parse(localStorage.getItem('imageInfo')).image
 
-    if (queryPaymentStatus) {
-      addDoc(collection(firestore, "userPaidImages"), {
-        uid: user.uid,
-        image: image
-      });
-    }
-  } catch (err) {
-    console.log(err)
-  }
+  //   if (queryPaymentStatus) {
+  //     addDoc(collection(firestore, "userPaidImages"), {
+  //       uid: user.uid,
+  //       image: image
+  //     });
+  //   }
+  // } catch (err) {
+  //   console.log(err)
+  // }
 
 
 

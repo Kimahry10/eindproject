@@ -34,9 +34,7 @@ const UploadImages = () => {
     const upload = uploadBytesResumable(storageRef, file)
 
     const uid = user.uid
-    if (!uid) {
-      return
-    }
+    if (!uid) { return }
 
 
 

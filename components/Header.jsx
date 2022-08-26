@@ -9,7 +9,7 @@ const Header = () => {
   const hamburgerToggle = () => setIsOpen(!isOpen);
 
   return (
-    <HeaderStyle>
+    <HeaderStyle className='container mx-auto'>
       <Link href='/'>
         <a>
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="47" viewBox="0 0 28 47">

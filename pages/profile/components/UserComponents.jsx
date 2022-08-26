@@ -9,12 +9,12 @@ import PurchasedImages from './PurchasedImages';
 const UserComponents = () => {
   const { userComponent, setUserComponent } = useAppContext();
   return (
-    <StyledUserComponents>
+    <div className='mt-8'>
       {userComponent === 'myDetails' && <UserDetails />}
       {userComponent === 'myImages' && <UserImages />}
       {userComponent === 'uploadImages' && <UploadImages />}
       {userComponent === 'purchasedImages' && <PurchasedImages />}
-    </StyledUserComponents>
+    </div>
   )
 }
 

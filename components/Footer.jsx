@@ -8,10 +8,10 @@ import { FooterStyling } from './styling'
 const Footer = () => {
   return (
     <FooterStyling>
-      <div className='footer-width'>
+      <div className='container justify-between mx-auto laptop:flex'>
         <div className='headerwrap'>
           <FooterHeadingTitle>Photoland</FooterHeadingTitle>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae nulla illo earum reiciendis. Reiciendis, possimus unde! Hic obcaecati recusandae fuga?</p>
+          <p className='max-w-lg mr-4 text-white laptop:mr-8'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae nulla illo earum reiciendis. Reiciendis, possimus unde! Hic obcaecati recusandae fuga?</p>
         </div>
         <FooterLinks />
         <FooterContacts />

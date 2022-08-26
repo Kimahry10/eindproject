@@ -10,8 +10,8 @@ const UserInfoAndNavigation = () => {
   const { user, logout } = UserAuth();
 
   return (
-    <UserInfoAndNavigationStyling>
-      <div className='button-wrap'>
+    <div className='container flex flex-col w-full mx-auto laptop:flex-row'>
+      <div className='flex justify-between mt-4 laptop:flex-col laptop:items-start laptop:mr-8'>
         <StyledButton onClick={() => setUserComponent('myDetails')}>My Details</StyledButton>
         <StyledButton onClick={() => setUserComponent('myImages')}>My Images</StyledButton>
         <StyledButton onClick={() => setUserComponent('uploadImages')}>Upload Images</StyledButton>
@@ -24,7 +24,7 @@ const UserInfoAndNavigation = () => {
           <p>Update your profile picture and personal details.</p>
         </div>
       </div>
-    </UserInfoAndNavigationStyling>
+    </div>
   )
 }
 

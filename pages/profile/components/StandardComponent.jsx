@@ -9,8 +9,10 @@ const StandardComponent = () => {
   return (
     <StandardComponentStyling>
       <Banner />
-      <UserInfoAndNavigation />
-      <UserComponents />
+      <div className='container px-4 mx-auto'>
+        <UserInfoAndNavigation />
+        <UserComponents />
+      </div>
     </StandardComponentStyling>
   )
 }

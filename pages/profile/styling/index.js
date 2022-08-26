@@ -86,11 +86,10 @@ const StyledButton = styled.button`
 const StyledUserComponents = styled.div`
   width: 100%;
   max-width: ${screenSize.desktopSize};
-  margin: 3rem auto;
+  /* margin: 3rem auto; */
 `;
 
 const ImageGridStyling = styled.div`
-  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 320px);
   gap: 1rem 0;

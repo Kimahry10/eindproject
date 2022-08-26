@@ -23,17 +23,19 @@ const PurchasedImages = () => {
   }, [])
 
   return (
-    <ImageGridStyling>
-      {
-        allImages.map((image, index) => {
-          if (image.uid === user.uid) {
-            return <div>
-              <Image src={image.image} key={index} alt='image' layout='fill' objectFit='fill' priority />
-            </div>
-          }
-        })
-      }
-    </ImageGridStyling>
+    <div className='container mx-auto'>
+      <div className='grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4'>
+        {
+          allImages.map((image, index) => {
+            if (image.uid === user.uid) {
+              return <div>
+                <Image src={image.image} key={index} alt='image' width="100%" height="100%" layout="responsive" objectFit="cover" priority />
+              </div>
+            }
+          })
+        }
+      </div>
+    </div>
   )
 }
 
