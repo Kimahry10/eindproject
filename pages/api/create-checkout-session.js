@@ -2,21 +2,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async (req, res) => {
-  const { image, email, description, tags } = req.body;
-
-  // const transformedItems = {
-  //   description: description,
-  //   quantity: 1,
-  //   price_data: {
-  //     currency: 'usd',
-  //     unit_amount: 13 * 100,
-  //     product_data: {
-  //       name: 'an image',
-  //       images: [image]
-  //     },
-  //   }
-  // }
-  // console.log(transformedItems)
+  const { image, email, description, uid } = req.body;
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
@@ -38,7 +24,8 @@ export default async (req, res) => {
     cancel_url: `${req.headers.origin}/?canceled=true`,
     metadata: {
       email,
-      images: image
+      images: image,
+      uid: uid
     }
   })
 

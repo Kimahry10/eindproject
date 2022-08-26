@@ -21,9 +21,6 @@ const PreviewPage = () => {
   const { user } = UserAuth();
 
   const imageStorage = JSON.parse(localStorage.getItem('imageInfo')).image
-
-
-
   const [allImages, setAllImages] = useState([])
 
 
@@ -70,7 +67,7 @@ const PreviewPage = () => {
       image: imageStorage,
       email: user.email,
       description: description,
-      tags: tags
+      uid: user.uid
     });
 
     // redirect user to stripe checkout
