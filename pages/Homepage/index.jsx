@@ -10,7 +10,6 @@ const Homepage = () => {
    * tags in firebase zetten (pages > profile > components > data)
    * profile update (inclusief banner misschien?)
    * search op tags van foto zoeken
-   * https://www.youtube.com/watch?v=4E0WOUYF-QI
    */
   return (
     <>
