@@ -1,6 +1,6 @@
 import React from 'react'
-import LinkButtonNoBorder from '../../../components/buttons/LinkButtonNoBorder'
-import { BannerStyling, H1, P } from '../styles'
+import LinkButtonNoBorder from '../../buttons/LinkButtonNoBorder'
+import { BannerStyling, H1, P } from '../../../styles/homepage/styles';
 import { UserAuth } from '../../../providers/AuthenticatedUser';
 
 

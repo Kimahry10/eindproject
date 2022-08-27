@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { H1, H2, ImageGridStyling, SearchStyling } from './styles';
 import BaseLayout from '../../components/BaseLayout'
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebase';
@@ -10,6 +9,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { InputText } from 'primereact/inputtext';
+import { H1, H2, ImageGridStyling, SearchStyling } from '../../styles/search/styles';
 
 
 // need to add input and filter results for users and images

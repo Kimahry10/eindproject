@@ -1,8 +1,8 @@
 import React from 'react'
-import { StandardComponentStyling } from '../styling'
 import Banner from './Banner'
 import UserInfoAndNavigation from './UserInfoAndNavigation'
 import UserComponents from './UserComponents'
+import { StandardComponentStyling } from '../../../styles/profile/styling'
 
 
 const StandardComponent = () => {

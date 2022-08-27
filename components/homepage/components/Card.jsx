@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import LinkButtonNoBorder from '../../../components/buttons/LinkButtonNoBorder';
-import { StyledCard } from '../styles';
+import { StyledCard } from '../../../styles/homepage/styles';
+import LinkButtonNoBorder from '../../buttons/LinkButtonNoBorder';
 
 
 const Card = ({ icon, title, text, buttonText, buttonLink }) => {

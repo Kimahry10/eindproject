@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { FormStyling, ImageDetailsText, ImageSize } from './styles';
-import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '../../firebase';
-import BaseLayout from '../../components/BaseLayout';
-import { UserAuth } from '../../providers/AuthenticatedUser';
 import axios from 'axios';
+import { collection, getDocs } from 'firebase/firestore';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import BaseLayout from '../../components/BaseLayout';
+import { firestore } from '../../firebase';
+import { UserAuth } from '../../providers/AuthenticatedUser';
+import { ImageDetailsText, ImageSize } from '../../styles/imageDetail/styles';
 const stripePromise = loadStripe(process.env.stripe_public_key)
 
 

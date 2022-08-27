@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react'
 import router from 'next/router';
-import { UserAuth } from '../../providers/AuthenticatedUser';
 import Link from 'next/link';
-import { Form, SignInStyling } from './styles';
 
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import { Form, SignInStyling } from '../../styles/signin/styles';
+import { UserAuth } from '../../providers/AuthenticatedUser';
 
 const SignIn = () => {
 

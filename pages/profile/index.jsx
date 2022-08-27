@@ -1,10 +1,9 @@
 import React from 'react'
 import BaseLayout from '../../components/BaseLayout'
-import StandardComponent from './components/StandardComponent';
 import Head from 'next/head';
 import { UserAuth } from '../../providers/AuthenticatedUser';
 import router from 'next/router';
-
+import StandardComponent from '../../components/profile/components/StandardComponent'
 
 const Profile = () => {
   const { user } = UserAuth();

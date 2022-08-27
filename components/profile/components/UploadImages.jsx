@@ -14,9 +14,9 @@ import { UserAuth } from '../../../providers/AuthenticatedUser';
 import { Tags } from '../../../providers/Tags';
 import { collection, addDoc, setDoc, doc } from 'firebase/firestore';
 import { color } from '../../../styles';
+import { UploadImagesStyling } from '../../../styles/profile/styling';
+import { MultipleValuesInput } from './MultipleValuesInput';
 
-import { UploadImagesStyling } from '../styling'
-import { MultipleValuesInput } from './MultipleValuesInput'
 
 
 const UploadImages = () => {

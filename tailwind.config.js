@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Montserrat: ['Montserrat', 'sans-serif'],
+        Nunito: ['Nunito', 'sans-serif'],
+      }, //end of fontFamily
+    },
     screens: {
       'tablet': '640px',
       // => @media (min-width: 640px) { ... }

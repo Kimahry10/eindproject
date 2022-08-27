@@ -4,8 +4,8 @@ import { collection, getDocs, query, where, } from "firebase/firestore";
 import Image from 'next/image';
 
 import { firestore } from '../../../firebase';
+import { ImageGridStyling } from '../../../styles/profile/styling';
 // import Image from 'next/image';
-import { ImageGridStyling } from '../styling';
 
 const UserImages = () => {
 

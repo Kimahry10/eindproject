@@ -1,18 +1,16 @@
 import Head from 'next/head'
 import React from 'react'
-import Banner from './components/Banner'
-import Cards from './components/Cards'
-import { H2 } from './styles'
+import Banner from '../../components/homepage/components/Banner'
+import Cards from '../../components/homepage/components/Cards'
 import Footer from '../../components/Footer';
+import { H2 } from '../../styles/homepage/styles';
 
 const Homepage = () => {
   /**
    * tags in firebase zetten (pages > profile > components > data)
-   * webhooks voor foto kopen
-   * foto mag maar 1x getoond worden in "purchased images" na aankoop
    * profile update (inclusief banner misschien?)
-   * stripe moet de aangeduide foto tonen voor verkoop
    * search op tags van foto zoeken
+   * https://www.youtube.com/watch?v=4E0WOUYF-QI
    */
   return (
     <>

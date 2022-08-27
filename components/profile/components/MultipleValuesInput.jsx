@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { AutoComplete } from 'primereact/autocomplete';
 import json from './data/tags.json';
-import { Tags } from '../../../providers/Tags';
+import { Tags } from '../../../providers/Tags'
 
 
 export const MultipleValuesInput = () => {

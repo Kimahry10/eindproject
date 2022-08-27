@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { firestore } from '../../../firebase';
 import { UserAuth } from '../../../providers/AuthenticatedUser';
 import Image from 'next/image';
-import { ImageGridStyling } from '../styling';
 
 const PurchasedImages = () => {
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { UserAuth } from '../../providers/AuthenticatedUser';
-import { Form, SignInStyling } from '../signin/styles';
 import Link from 'next/link';
 
 import { InputText } from 'primereact/inputtext';
@@ -10,6 +9,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { InputTextarea } from 'primereact/inputtextarea';
+import { Form, SignInStyling } from '../../styles/signin/styles';
 
 
 const SignUp = (e) => {

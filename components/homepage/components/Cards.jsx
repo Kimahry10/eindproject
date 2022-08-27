@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyledCards } from '../styles'
 import Card from './Card'
 import profileIcon from '/public/icons/profile.svg';
 import uploadIcon from '/public/icons/cloud-upload.svg';
 import checkIcon from '/public/icons/check.svg';
+import { StyledCards } from '../../../styles/homepage/styles';
 
 
 const Cards = () => {

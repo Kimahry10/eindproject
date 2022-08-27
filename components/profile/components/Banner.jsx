@@ -1,5 +1,5 @@
 import React from 'react'
-import { BannerStyling } from '../styling'
+import { BannerStyling } from '../../../styles/profile/styling'
 
 const Banner = () => {
   return (

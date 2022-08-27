@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderRadius, boxShadow, color, screenSize } from '../../../styles';
+import { borderRadius, boxShadow, color, screenSize } from '../..';
 
 const ImageDetailStyling = styled.div`
   display: flex;

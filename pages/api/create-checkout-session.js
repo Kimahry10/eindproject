@@ -20,7 +20,7 @@ export default async (req, res) => {
         quantity: 1,
       }],
     mode: 'payment',
-    success_url: `${req.headers.origin}/success?payment=true`,
+    success_url: `${req.headers.origin}/success`,
     cancel_url: `${req.headers.origin}/?canceled=true`,
     metadata: {
       email,
