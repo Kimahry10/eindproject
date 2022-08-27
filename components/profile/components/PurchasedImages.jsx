@@ -27,8 +27,8 @@ const PurchasedImages = () => {
         {
           allImages.map((image, index) => {
             if (image.uid === user.uid) {
-              return <div>
-                <Image src={image.image} key={index} alt='image' width="100%" height="100%" layout="responsive" objectFit="cover" priority />
+              return <div key={index}>
+                <Image src={image.image} alt='image' width="100%" height="100%" layout="responsive" objectFit="cover" priority />
               </div>
             }
           })

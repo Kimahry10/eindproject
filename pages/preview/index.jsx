@@ -81,26 +81,24 @@ const PreviewPage = () => {
 
   return (
     <BaseLayout>
-      {/* <FormStyling action="/api/checkout_sessions" method="POST"> */}
-      <ImageSize>
-        <Image src={image} alt='image' layout='fill' objectFit='cover' priority />
-      </ImageSize>
-      <ImageDetailsText>
-        <div>
-          <h2>Description</h2>
-          <p>{description}</p>
-          <h2>Tags</h2>
-          <ul>
+      <div className='container flex flex-wrap px-4 mx-auto'>
+        <ImageSize>
+          <Image src={image} alt='image' layout='fill' objectFit='cover' priority />
+        </ImageSize>
+        <div className='w-full mt-8 laptop:mt-0 laptop:ml-4 laptop:w-1/4'>
+          <h2 className='text-2xl font-bold '>Description</h2>
+          <p className='mb-4'>{description}</p>
+          <h2 className='text-2xl font-bold '>Tags</h2>
+          <ul className='mb-4'>
             {
               tags && tags.map((tag, index) => <li key={index}>{tag.name}</li>)
             }
           </ul>
+          <button className='w-full px-12 py-4 font-bold text-white duration-200 bg-green-500 rounded shadow-md hover:bg-green-600' type="submit" role="link" onClick={createCheckoutSession}>
+            Checkout
+          </button>
         </div>
-        <button type="submit" role="link" onClick={createCheckoutSession}>
-          Checkout
-        </button>
-      </ImageDetailsText>
-      {/* </FormStyling> */}
+      </div>
     </BaseLayout>
   );
 }

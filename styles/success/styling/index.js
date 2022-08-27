@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { screenSize } from '../../../styles';
+import { screenSize } from '../..';
 
 const SuccessStyling = styled.div`
   height: 65vh;

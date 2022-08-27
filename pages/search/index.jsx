@@ -62,7 +62,7 @@ const Search = () => {
 
   return (
     <BaseLayout>
-      <SearchStyling>
+      <SearchStyling className='container'>
         <H1>Search</H1>
         <span className="p-float-label">
           <InputText id="in" type='text' value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />

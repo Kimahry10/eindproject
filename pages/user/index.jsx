@@ -38,19 +38,21 @@ const User = () => {
 
   return (
     <BaseLayout>
-      {user && <p>{user.email}</p>}
-      {user && <p>{user.displayName}</p>}
-      {user && <p>{user.bio}</p>}
-      {user && <p>{user.website}</p>}
-      {
-        allImages && allImages.map((image, index) => {
-          return <Link key={index} href={`preview?image=${image.image}`}>
-            <a>
-              <Image src={image.image} alt='image' height={300} width={300} priority />
-            </a>
-          </Link>
-        })
-      }
+      <div className='container px-4 mx-auto'>
+        {user && <p>{user.email}</p>}
+        {user && <p>{user.displayName}</p>}
+        {user && <p>{user.bio}</p>}
+        {user && <p>{user.website}</p>}
+        {
+          allImages && allImages.map((image, index) => {
+            return <Link key={index} href={`preview?image=${image.image}`}>
+              <a>
+                <Image src={image.image} alt='image' height={300} width={300} priority />
+              </a>
+            </Link>
+          })
+        }
+      </div>
     </BaseLayout>
   )
 }

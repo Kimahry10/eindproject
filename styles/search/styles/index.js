@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { borderRadius, color, screenSize } from '../../../styles';
+import { borderRadius, color, screenSize } from '../..';
 
 const SearchStyling = styled.div`
   width: 100%;
-  max-width: ${screenSize.desktopSize};
+  /* max-width: ${screenSize.desktopSize}; */
   margin: 0 auto;
 
   .all-users {
@@ -54,7 +54,7 @@ const H2 = styled.h2`
 
 const ImageGridStyling = styled.div`
   width: 100%;
-  max-width: ${screenSize.desktopSize};
+  /* max-width: ${screenSize.desktopSize}; */
   margin: 0 auto;
   padding: 1rem;
   display: grid;
