@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import { H2 } from '../../styles/homepage/styles';
 
 const Homepage = () => {
+
   return (
     <>
       <Head>
