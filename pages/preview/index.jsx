@@ -20,7 +20,7 @@ const PreviewPage = () => {
 
   const { user } = UserAuth();
 
-  const imageStorage = JSON.parse(localStorage.getItem('imageInfo')).image
+
   const [allImages, setAllImages] = useState([])
 
 
@@ -60,6 +60,7 @@ const PreviewPage = () => {
   console.log(tags)
 
   const createCheckoutSession = async () => {
+    const imageStorage = JSON.parse(localStorage.getItem('imageInfo')).image
     const stripe = await stripePromise;
 
     // call backend to create checkout session
